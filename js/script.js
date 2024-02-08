@@ -62,7 +62,7 @@ ButtonElement.addEventListener("click", function(event){
 
     // dichiaro contatore punteggio
     let counter = 0;
-    
+
     for (let i = 1; i < numberOfCells +1; i++) {
 
         // creo un elemento
@@ -89,7 +89,10 @@ ButtonElement.addEventListener("click", function(event){
 
                 // Messaggio "hai perso"
                 document.querySelector(".hidden-lost").classList.remove("d-none");
-            
+
+                // Utente non può cliccare più su altre celle
+                document.querySelectorAll(".square").classList.add("no-more-click");
+
             // se la cella ha una bomba nel livello medio
             } else if (difficultyChoice == "medio"  && randomNumers81Cells.includes(i)) {
 
@@ -100,6 +103,10 @@ ButtonElement.addEventListener("click", function(event){
                 // Messaggio "hai perso"
                 document.querySelector(".hidden-lost").classList.remove("d-none");
 
+                // Utente non può cliccare più su altre celle
+                document.querySelectorAll(".square").classList.add("no-more-click");
+
+
             // se la cella ha una bomba nel livello difficile
             } else if (difficultyChoice == "difficile"  && randomNumers49Cells.includes(i)) {
                 this.classList.add("bomb");
@@ -108,11 +115,15 @@ ButtonElement.addEventListener("click", function(event){
 
                 // Messaggio "hai perso"
                 document.querySelector(".hidden-lost").classList.remove("d-none");
+
+                // Utente non può cliccare più su altre celle
+                document.querySelectorAll(".square").classList.add("no-more-click");
+
             
                 // se la cella non ha una bomba   
             } else {
 
-                counter += 1 * 100;
+                counter += 0;
 
                 this.classList.add("active");
                 punteggioPerClick.innerHTML = "";

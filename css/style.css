@@ -21,12 +21,6 @@ h1 {
     font-family: "Bungee Spice", sans-serif;
 }
 
-h2 {
-    font-family: 'Protest Strike', sans-serif;
-    color: white;
-    text-align: center;
-}
-
 .hidden-points {
     display: flex;
     align-items: center;
@@ -127,6 +121,8 @@ main {
 
 }
 
+/* CLASSES ACTIVED WITH JS */
+
 .active {
     background-color:green;
 }
@@ -143,3 +139,18 @@ main {
 .d-none {
     display: none;
 }
+
+.no-more-click {
+    pointer-events: none;
+}
+
+.hidden-lost {
+    margin-top: 20px;
+
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Protest Strike', sans-serif;
+    color: white;
+    
+}
+
