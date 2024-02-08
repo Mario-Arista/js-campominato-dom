@@ -60,6 +60,9 @@ ButtonElement.addEventListener("click", function(event){
     // dichiaro variabile per contatore iniziando da stringa 0000
     let punteggioPerClick = document.querySelector(".counter");
 
+    // dichiaro contatore punteggio
+    let counter = 0;
+    
     for (let i = 1; i < numberOfCells +1; i++) {
 
         // creo un elemento
@@ -76,9 +79,6 @@ ButtonElement.addEventListener("click", function(event){
 
         // eventi al chick sulle celle del gioco
         newElement.addEventListener("click", function() {
-
-            // dichiaro contatore punteggio
-            let counter = 0;
 
             // se la cella ha una bomba nel livello facile
             if (difficultyChoice == "facile" && randomNumers100Cells.includes(i)) {
@@ -112,6 +112,7 @@ ButtonElement.addEventListener("click", function(event){
                 // se la cella non ha una bomba   
             } else {
 
+                counter += 1 * 100;
 
                 this.classList.add("active");
                 punteggioPerClick.innerHTML = "";
