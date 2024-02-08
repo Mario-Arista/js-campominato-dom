@@ -91,7 +91,41 @@ function randomNumber100() {
     return arrayEasy;
 }
 
-const numeriCasuali100 = randomNumber100();
+// Funzione che mi genera 16 numeri random diversi tra 1 e 81
 
-console.log(numeriCasuali100);
+function randomNumber81() {
+
+    const arrayMedium = [];
+
+    while (arrayMedium.length < 16) {
+        const random81Numbers = Math.floor(Math.random() * 81) + 1;
+
+        if (!arrayMedium.includes(random81Numbers)){
+            arrayMedium.push(random81Numbers);
+        }
+    }
+
+    return arrayMedium;
+}
+
+// Funzione che mi genera 16 numeri random diversi tra 1 e 49
+
+function randomNumber49() {
+
+    const arrayDifficult = [];
+
+    while (arrayDifficult.length < 16) {
+        const random49Numbers = Math.floor(Math.random() * 49) + 1;
+
+        if (!arrayDifficult.includes(random49Numbers)){
+            arrayDifficult.push(random49Numbers);
+        }
+    }
+
+    return arrayDifficult;
+}
+
+
+
+
 
