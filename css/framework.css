@@ -1,0 +1,562 @@
+/* RESET RULES */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/***********************************************
+    test rules
+ ***********************************************
+/
+
+
+/* Background color and border */
+
+.test * {
+    border: dashed 1px red;
+    background-color: rgba(0, 255, 0, 0.2);
+}
+
+/***********************************************
+    12-col Framework
+ ***********************************************
+/
+
+
+/* container & row */
+
+.container {
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* common rule for all the cols */
+
+[class*="col-"] {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+}
+
+/* single col */
+
+.col-1 {
+    max-width: calc(100% / 12 * 1);
+    flex-basis: calc(100% / 12 * 1);
+}
+
+.col-2 {
+    max-width: calc(100% / 12 * 2);
+    flex-basis: calc(100% / 12 * 2);
+}
+
+.col-3 {
+    max-width: calc(100% / 12 * 3);
+    flex-basis: calc(100% / 12 * 3);
+}
+
+.col-4 {
+    max-width: calc(100% / 12 * 4);
+    flex-basis: calc(100% / 12 * 4);
+}
+
+.col-5 {
+    max-width: calc(100% / 12 * 5);
+    flex-basis: calc(100% / 12 * 5);
+}
+
+.col-6 {
+    max-width: calc(100% / 12 * 6);
+    flex-basis: calc(100% / 12 * 6);
+}
+
+.col-7 {
+    max-width: calc(100% / 12 * 7);
+    flex-basis: calc(100% / 12 * 7);
+}
+
+.col-8 {
+    max-width: calc(100% / 12 * 8);
+    flex-basis: calc(100% / 12 * 8);
+}
+
+.col-9 {
+    max-width: calc(100% / 12 * 9);
+    flex-basis: calc(100% / 12 * 9);
+}
+
+.col-10 {
+    max-width: calc(100% / 12 * 10);
+    flex-basis: calc(100% / 12 * 10);
+}
+
+.col-11 {
+    max-width: calc(100% / 12 * 11);
+    flex-basis: calc(100% / 12 * 11);
+}
+
+.col-12 {
+    max-width: calc(100% / 12 * 12);
+    flex-basis: calc(100% / 12 * 12);
+}
+
+/* offset cols */
+
+.offset-1 {
+    margin-left: calc(100% / 12 * 1);
+}
+
+.offset-2 {
+    margin-left: calc(100% / 12 * 2);
+}
+
+.offset-3 {
+    margin-left: calc(100% / 12 * 3);
+}
+
+.offset-4 {
+    margin-left: calc(100% / 12 * 4);
+}
+
+.offset-5 {
+    margin-left: calc(100% / 12 * 5);
+}
+
+.offset-6 {
+    margin-left: calc(100% / 12 * 6);
+}
+
+.offset-7 {
+    margin-left: calc(100% / 12 * 7);
+}
+
+.offset-8 {
+    margin-left: calc(100% / 12 * 8);
+}
+
+.offset-9 {
+    margin-left: calc(100% / 12 * 9);
+}
+
+.offset-10 {
+    margin-left: calc(100% / 12 * 10);
+}
+
+.offset-11 {
+    margin-left: calc(100% / 12 * 11);
+}
+
+.offset-12 {
+    margin-left: calc(100% / 12 * 12);
+}
+
+
+/***********************************************
+    Media querries framework 12-col
+ ***********************************************
+/
+
+/* Querry Mobile */
+
+@media screen and (min-width: 1px) {
+
+    .col-xs-1 {
+        max-width: calc(100% / 12 * 1);
+        flex-basis: calc(100% / 12 * 1);
+    }
+
+    .col-xs-2 {
+        max-width: calc(100% / 12 * 2);
+        flex-basis: calc(100% / 12 * 2);
+    }
+
+    .col-xs-3 {
+        max-width: calc(100% / 12 * 3);
+        flex-basis: calc(100% / 12 * 3);
+    }
+
+    .col-xs-4 {
+        max-width: calc(100% / 12 * 4);
+        flex-basis: calc(100% / 12 * 4);
+    }
+
+    .col-xs-4 {
+        max-width: calc(100% / 12 * 4);
+        flex-basis: calc(100% / 12 * 4);
+    }
+
+    .col-xs-5 {
+        max-width: calc(100% / 12 * 5);
+        flex-basis: calc(100% / 12 * 5);
+    }
+
+    .col-xs-6 {
+        max-width: calc(100% / 12 * 6);
+        flex-basis: calc(100% / 12 * 6);
+    }
+
+    .col-xs-7 {
+        max-width: calc(100% / 12 * 7);
+        flex-basis: calc(100% / 12 * 7);
+    }
+
+    .col-xs-8 {
+        max-width: calc(100% / 12 * 8);
+        flex-basis: calc(100% / 12 * 8);
+    }
+
+    .col-xs-9 {
+        max-width: calc(100% / 12 * 9);
+        flex-basis: calc(100% / 12 * 9);
+    }
+
+    .col-xs-10 {
+        max-width: calc(100% / 12 * 10);
+        flex-basis: calc(100% / 12 * 10);
+    }
+
+    .col-xs-11 {
+        max-width: calc(100% / 12 * 11);
+        flex-basis: calc(100% / 12 * 11);
+    }
+
+    .col-xs-12 {
+        max-width: calc(100% / 12 * 12);
+        flex-basis: calc(100% / 12 * 12);
+    }
+
+}
+
+/* Querry Mobile bigger. vertical tablet */
+
+@media screen and (min-width: 576px) {
+
+    .col-sm-1 {
+        max-width: calc(100% / 12 * 1);
+        flex-basis: calc(100% / 12 * 1);
+    }
+
+    .col-sm-2 {
+        max-width: calc(100% / 12 * 2);
+        flex-basis: calc(100% / 12 * 2);
+    }
+
+    .col-sm-3 {
+        max-width: calc(100% / 12 * 3);
+        flex-basis: calc(100% / 12 * 3);
+    }
+
+    .col-sm-4 {
+        max-width: calc(100% / 12 * 4);
+        flex-basis: calc(100% / 12 * 4);
+    }
+
+    .col-sm-4 {
+        max-width: calc(100% / 12 * 4);
+        flex-basis: calc(100% / 12 * 4);
+    }
+
+    .col-sm-5 {
+        max-width: calc(100% / 12 * 5);
+        flex-basis: calc(100% / 12 * 5);
+    }
+
+    .col-sm-6 {
+        max-width: calc(100% / 12 * 6);
+        flex-basis: calc(100% / 12 * 6);
+    }
+
+    .col-sm-7 {
+        max-width: calc(100% / 12 * 7);
+        flex-basis: calc(100% / 12 * 7);
+    }
+
+    .col-sm-8 {
+        max-width: calc(100% / 12 * 8);
+        flex-basis: calc(100% / 12 * 8);
+    }
+
+    .col-sm-9 {
+        max-width: calc(100% / 12 * 9);
+        flex-basis: calc(100% / 12 * 9);
+    }
+
+    .col-sm-10 {
+        max-width: calc(100% / 12 * 10);
+        flex-basis: calc(100% / 12 * 10);
+    }
+
+    .col-sm-11 {
+        max-width: calc(100% / 12 * 11);
+        flex-basis: calc(100% / 12 * 11);
+    }
+
+    .col-sm-12 {
+        max-width: calc(100% / 12 * 12);
+        flex-basis: calc(100% / 12 * 12);
+    }
+
+}
+
+
+/***********************************************
+    Flex rules
+ ***********************************************
+/
+
+
+/* display and direction*/
+
+.flex {
+    display: flex;
+}
+
+.flex-direction-col {
+    flex-direction: column;
+}
+
+/* justify content */
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+/* align items */
+
+.align-center {
+    align-items: center;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+.align-between {
+    align-items: space-between;
+}
+
+.align-around {
+    align-items: space-around;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+/***********************************************
+    Position & z-index rules
+ ***********************************************
+/
+
+/* Absolute, relative, fixed */
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.fixex {
+    position: fixed;
+}
+
+/* Z-index */
+
+.z-1 {
+    z-index: 1;
+}
+
+.z-2 {
+    z-index: 2;
+}
+
+.z-3 {
+    z-index: 3;
+}
+
+.z-4 {
+    z-index: 4;
+}
+
+.z-5 {
+    z-index: 5;
+}
+
+.z-6 {
+    z-index: 6;
+}
+
+.z-7 {
+    z-index: 7;
+}
+
+.z-8 {
+    z-index: 8;
+}
+
+.z-9 {
+    z-index: 9;
+}
+
+.z-10 {
+    z-index: 10;
+}
+
+
+/***********************************************
+    Margin Top & Margin Bottom rules
+ ***********************************************
+/
+
+/* Margin Top, from 2px to 30px */
+
+.mt-2 {
+    margin-top: 2px;
+}
+
+.mt-4 {
+    margin-top: 4px;
+}
+
+.mt-6 {
+    margin-top: 6px;
+}
+
+.mt-8 {
+    margin-top: 8px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-12 {
+    margin-top: 12px;
+}
+
+.mt-14 {
+    margin-top: 14px;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+.mt-18 {
+    margin-top: 18px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-22 {
+    margin-top: 22px;
+}
+
+.mt-24 {
+    margin-top: 24px;
+}
+
+.mt-26 {
+    margin-top: 26px;
+}
+
+.mt-28 {
+    margin-top: 28px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+
+
+/* Margin Bottom, from 2px to 30px */
+
+.mb-2 {
+    margin-bottom: 2px;
+}
+
+.mb-4 {
+    margin-bottom: 4px;
+}
+
+.mb-6 {
+    margin-bottom: 6px;
+}
+
+.mb-8 {
+    margin-bottom: 8px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mb-12 {
+    margin-bottom: 12px;
+}
+
+.mb-14 {
+    margin-bottom: 14px;
+}
+
+.mb-16 {
+    margin-bottom: 16px;
+}
+
+.mb-18 {
+    margin-bottom: 18px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-22 {
+    margin-bottom: 22px;
+}
+
+.mb-24 {
+    margin-bottom: 24px;
+}
+
+.mb-26 {
+    margin-bottom: 26px;
+}
+
+.mb-28 {
+    margin-bottom: 28px;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+

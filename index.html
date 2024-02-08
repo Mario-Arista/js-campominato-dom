@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campo Minato</title>
+
+    <!-- Framework CSS -->
+    <link rel="stylesheet" href="./css/framework.css">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Font H1 + BUTTON -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    
+    <!-- Font CELLE e SELECT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+    <header class="flex">
+        <div class="flex align-center">
+
+            <div>
+                <h1>CAMPO MINATO</h1>
+            </div>
+
+            <form class="flex justify-end">
+                <select name="difficulty" id="level-select">
+                    <option  value="">Scegli il livello!</option>
+                    <option id="level-fac" value="facile">FACILE</option>
+                    <option id="level-med" value="medio">MEDIUM</option>
+                    <option id="level-dif" value="difficile">DIFFICILE</option>
+                   
+                </select>
+                
+                <input value="GIOCA" id="start-button" type="button">
+                
+            </form>
+
+        </div>
+
+    </header>
+
+    <main>
+        <div id="grid" class="container">
+            <div class="row">
+
+            </div>
+
+        </div>
+    </main>
+
+
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
