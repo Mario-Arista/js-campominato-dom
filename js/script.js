@@ -56,9 +56,10 @@ ButtonElement.addEventListener("click", function(event){
 
     // Faccio vedere punteggio
     document.querySelector(".hidden-points").classList.remove("d-none");
-    document.querySelector(".counter").innerHTML = "0000";
 
-    
+    // dichiaro variabile per contatore iniziando da stringa 0000
+    let punteggioPerClick = document.querySelector(".counter");
+
     for (let i = 1; i < numberOfCells +1; i++) {
 
         // creo un elemento
@@ -73,40 +74,54 @@ ButtonElement.addEventListener("click", function(event){
         //aggiungo il nuovo elemento alla row
         gridElement.append(newElement);
 
-        //aggiungo che se clicco il nuovo elemento
-        // cambia background color
+        // eventi al chick sulle celle del gioco
         newElement.addEventListener("click", function() {
 
+            // dichiaro contatore punteggio
+            let counter = 0;
+
+            // se la cella ha una bomba nel livello facile
             if (difficultyChoice == "facile" && randomNumers100Cells.includes(i)) {
                 
                 this.classList.add("bomb");
                 console.log("è stata cliccata la cella con bomba:", this);
                 newElement.innerText = "BOMB!";
 
+                // Messaggio "hai perso"
                 document.querySelector(".hidden-lost").classList.remove("d-none");
-            }
+            
+            // se la cella ha una bomba nel livello medio
+            } else if (difficultyChoice == "medio"  && randomNumers81Cells.includes(i)) {
 
-            if (difficultyChoice == "medio"  && randomNumers81Cells.includes(i)) {
-                this.classList.add("bomb");
-                console.log("è stata cliccata la cella con bomba:", this);
-                newElement.innerText = "BOMB!";
-                
-                document.querySelector(".hidden-lost").classList.remove("d-none");
-            }
-
-            if (difficultyChoice == "difficile"  && randomNumers49Cells.includes(i)) {
                 this.classList.add("bomb");
                 console.log("è stata cliccata la cella con bomba:", this);
                 newElement.innerText = "BOMB!";
 
+                // Messaggio "hai perso"
                 document.querySelector(".hidden-lost").classList.remove("d-none");
-                
-            }
 
-            this.classList.add("active");
-            console.log("è stata cliccata la cella senza bomba:", this);
+            // se la cella ha una bomba nel livello difficile
+            } else if (difficultyChoice == "difficile"  && randomNumers49Cells.includes(i)) {
+                this.classList.add("bomb");
+                console.log("è stata cliccata la cella con bomba:", this);
+                newElement.innerText = "BOMB!";
+
+                // Messaggio "hai perso"
+                document.querySelector(".hidden-lost").classList.remove("d-none");
             
+                // se la cella non ha una bomba   
+            } else {
+
+
+                this.classList.add("active");
+                punteggioPerClick.innerHTML = "";
+
+                counter++; 
+                punteggioPerClick.innerText = counter;
+            }
             
+
+
 
         });
 
