@@ -77,19 +77,20 @@ ButtonElement.addEventListener("click", function(event){
             if (difficultyChoice == "facile" && randomNumers100Cells.includes(i)) {
                 this.classList.add("bomb");
                 console.log("è stata cliccata la cella con bomba:", this);
+                newElement.innerText = "";
                 
             }
 
             if (difficultyChoice == "medio"  && randomNumers81Cells.includes(i)) {
                 this.classList.add("bomb");
                 console.log("è stata cliccata la cella con bomba:", this);
-                
+                newElement.innerText = "";
             }
 
             if (difficultyChoice == "difficile"  && randomNumers49Cells.includes(i)) {
                 this.classList.add("bomb");
                 console.log("è stata cliccata la cella con bomba:", this);
-
+                newElement.innerText = "";
             }
 
             this.classList.add("active");

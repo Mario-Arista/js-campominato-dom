@@ -103,10 +103,12 @@ main {
 }
 
 .active {
-    background-color:#F09D01;
-    color: #CA0E00;
+    background-color:green;
 }
 
 .bomb  {
-    background-color:green;
+    background-color: #ca0d00a8;
+    background-image: url("../img/klipartz.com.png");
+    background-size: contain;
+    color: black;
 }
