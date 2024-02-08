@@ -72,3 +72,26 @@ ButtonElement.addEventListener("click", function(event){
     }
 
 });
+
+
+// Funzione che mi genera 16 numeri random diversi tra 1 e 100
+
+function randomNumber100() {
+
+    const arrayEasy = [];
+
+    while (arrayEasy.length < 16) {
+        const random100Numbers = Math.floor(Math.random() * 100) + 1;
+
+        if (!arrayEasy.includes(random100Numbers)){
+            arrayEasy.push(random100Numbers);
+        }
+    }
+
+    return arrayEasy;
+}
+
+const numeriCasuali100 = randomNumber100();
+
+console.log(numeriCasuali100);
+
