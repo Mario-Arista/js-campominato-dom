@@ -54,6 +54,9 @@ ButtonElement.addEventListener("click", function(event){
     const randomNumers49Cells = randomNumberDifficult();
     console.log("numeri con bombe LIVELLO DIFFICILE", randomNumers49Cells);
 
+    // Faccio vedere punteggio
+    document.querySelector(".hidden-points").classList.remove("d-none");
+    document.querySelector(".counter").innerHTML = "0000";
 
     
     for (let i = 1; i < numberOfCells +1; i++) {
@@ -75,22 +78,29 @@ ButtonElement.addEventListener("click", function(event){
         newElement.addEventListener("click", function() {
 
             if (difficultyChoice == "facile" && randomNumers100Cells.includes(i)) {
+                
                 this.classList.add("bomb");
                 console.log("è stata cliccata la cella con bomba:", this);
-                newElement.innerText = "";
-                
+                newElement.innerText = "BOMB!";
+
+                document.querySelector(".hidden-lost").classList.remove("d-none");
             }
 
             if (difficultyChoice == "medio"  && randomNumers81Cells.includes(i)) {
                 this.classList.add("bomb");
                 console.log("è stata cliccata la cella con bomba:", this);
-                newElement.innerText = "";
+                newElement.innerText = "BOMB!";
+                
+                document.querySelector(".hidden-lost").classList.remove("d-none");
             }
 
             if (difficultyChoice == "difficile"  && randomNumers49Cells.includes(i)) {
                 this.classList.add("bomb");
                 console.log("è stata cliccata la cella con bomba:", this);
-                newElement.innerText = "";
+                newElement.innerText = "BOMB!";
+
+                document.querySelector(".hidden-lost").classList.remove("d-none");
+                
             }
 
             this.classList.add("active");
