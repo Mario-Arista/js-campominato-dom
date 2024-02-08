@@ -106,3 +106,7 @@ main {
     background-color:#F09D01;
     color: #CA0E00;
 }
+
+.bomb  {
+    background-color:green;
+}

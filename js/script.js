@@ -44,6 +44,18 @@ ButtonElement.addEventListener("click", function(event){
         alert("Scegli un livello per giocare!");
     }
 
+    // Dichiaro i 3 array con numeri casuali
+    const randomNumers100Cells = randomNumberEasy();
+    console.log("numeri con bombe LIVELLO FACILE", randomNumers100Cells);
+            
+    const randomNumers81Cells = randomNumberMedium();
+    console.log("numeri con bombe LIVELLO MEDIUM", randomNumers81Cells);
+            
+    const randomNumers49Cells = randomNumberDifficult();
+    console.log("numeri con bombe LIVELLO DIFFICILE", randomNumers49Cells);
+
+
+    
     for (let i = 1; i < numberOfCells +1; i++) {
 
         // creo un elemento
@@ -62,8 +74,27 @@ ButtonElement.addEventListener("click", function(event){
         // cambia background color
         newElement.addEventListener("click", function() {
 
+            if (difficultyChoice == "facile" && randomNumers100Cells.includes(i)) {
+                this.classList.add("bomb");
+                console.log("è stata cliccata la cella con bomba:", this);
+                
+            }
+
+            if (difficultyChoice == "medio"  && randomNumers81Cells.includes(i)) {
+                this.classList.add("bomb");
+                console.log("è stata cliccata la cella con bomba:", this);
+                
+            }
+
+            if (difficultyChoice == "difficile"  && randomNumers49Cells.includes(i)) {
+                this.classList.add("bomb");
+                console.log("è stata cliccata la cella con bomba:", this);
+
+            }
+
             this.classList.add("active");
-            console.log("è stata cliccata la cella numero:", this);
+            console.log("è stata cliccata la cella senza bomba:", this);
+            
             
 
         });
@@ -76,7 +107,7 @@ ButtonElement.addEventListener("click", function(event){
 
 // Funzione che mi genera 16 numeri random diversi tra 1 e 100
 
-function randomNumber100() {
+function randomNumberEasy() {
 
     const arrayEasy = [];
 
@@ -93,7 +124,7 @@ function randomNumber100() {
 
 // Funzione che mi genera 16 numeri random diversi tra 1 e 81
 
-function randomNumber81() {
+function randomNumberMedium() {
 
     const arrayMedium = [];
 
@@ -110,7 +141,7 @@ function randomNumber81() {
 
 // Funzione che mi genera 16 numeri random diversi tra 1 e 49
 
-function randomNumber49() {
+function randomNumberDifficult() {
 
     const arrayDifficult = [];
 
@@ -124,7 +155,6 @@ function randomNumber49() {
 
     return arrayDifficult;
 }
-
 
 
 
