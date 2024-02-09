@@ -11,7 +11,7 @@ ButtonElement.addEventListener("click", function(event){
     // Prevengo eventuali problemi
     event.preventDefault()
 
-    // // resetto la griglia in maniera tale da non cerare una nuava griglia ogni
+    // // resetto la griglia in maniera tale da non creare una nuava griglia ogni
     // // volta che clicco
     gridElement.innerHTML = "";
 
@@ -57,7 +57,7 @@ ButtonElement.addEventListener("click", function(event){
     // Faccio vedere punteggio
     document.querySelector(".hidden-points").classList.remove("d-none");
 
-    // dichiaro variabile per contatore iniziando da stringa 0000
+    // dichiaro contatore iniziando da stringa 0000
     let punteggioPerClick = document.querySelector(".counter");
 
     // dichiaro contatore punteggio
@@ -91,7 +91,7 @@ ButtonElement.addEventListener("click", function(event){
                 document.querySelector(".hidden-lost").classList.remove("d-none");
 
                 // Utente non può cliccare più su altre celle
-                document.querySelectorAll(".square").classList.add("no-more-click");
+                gridElement.classList.add("no-more-click");
 
             // se la cella ha una bomba nel livello medio
             } else if (difficultyChoice == "medio"  && randomNumers81Cells.includes(i)) {
@@ -104,7 +104,7 @@ ButtonElement.addEventListener("click", function(event){
                 document.querySelector(".hidden-lost").classList.remove("d-none");
 
                 // Utente non può cliccare più su altre celle
-                document.querySelectorAll(".square").classList.add("no-more-click");
+                gridElement.classList.add("no-more-click");
 
 
             // se la cella ha una bomba nel livello difficile
@@ -117,7 +117,7 @@ ButtonElement.addEventListener("click", function(event){
                 document.querySelector(".hidden-lost").classList.remove("d-none");
 
                 // Utente non può cliccare più su altre celle
-                document.querySelectorAll(".square").classList.add("no-more-click");
+                gridElement.classList.add("no-more-click");
 
             
                 // se la cella non ha una bomba   
