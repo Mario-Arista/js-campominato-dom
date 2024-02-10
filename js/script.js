@@ -44,15 +44,9 @@ ButtonElement.addEventListener("click", function(event){
         alert("Scegli un livello per giocare!");
     }
 
-    // Dichiaro i 3 array con numeri casuali
-    const randomNumers100Cells = randomNumberEasy();
+    // Dichiaro l'array con numeri casuali
+    const randomNumers100Cells = randomNumberEasy(numberOfCells);
     console.log("numeri con bombe LIVELLO FACILE", randomNumers100Cells);
-            
-    const randomNumers81Cells = randomNumberMedium();
-    console.log("numeri con bombe LIVELLO MEDIUM", randomNumers81Cells);
-            
-    const randomNumers49Cells = randomNumberDifficult();
-    console.log("numeri con bombe LIVELLO DIFFICILE", randomNumers49Cells);
 
     // Faccio vedere punteggio
     document.querySelector(".hidden-points").classList.remove("d-none");
@@ -80,8 +74,8 @@ ButtonElement.addEventListener("click", function(event){
         // eventi al chick sulle celle del gioco
         newElement.addEventListener("click", function() {
 
-            // se la cella ha una bomba nel livello facile
-            if (difficultyChoice == "facile" && randomNumers100Cells.includes(i)) {
+            // se la cella ha una bomba 
+            if (randomNumers100Cells.includes(i)) {
                 
                 this.classList.add("bomb");
                 console.log("è stata cliccata la cella con bomba:", this);
@@ -93,34 +87,7 @@ ButtonElement.addEventListener("click", function(event){
                 // Utente non può cliccare più su altre celle
                 gridElement.classList.add("no-more-click");
 
-            // se la cella ha una bomba nel livello medio
-            } else if (difficultyChoice == "medio"  && randomNumers81Cells.includes(i)) {
-
-                this.classList.add("bomb");
-                console.log("è stata cliccata la cella con bomba:", this);
-                newElement.innerText = "BOMB!";
-
-                // Messaggio "hai perso"
-                document.querySelector(".hidden-lost").classList.remove("d-none");
-
-                // Utente non può cliccare più su altre celle
-                gridElement.classList.add("no-more-click");
-
-
-            // se la cella ha una bomba nel livello difficile
-            } else if (difficultyChoice == "difficile"  && randomNumers49Cells.includes(i)) {
-                this.classList.add("bomb");
-                console.log("è stata cliccata la cella con bomba:", this);
-                newElement.innerText = "BOMB!";
-
-                // Messaggio "hai perso"
-                document.querySelector(".hidden-lost").classList.remove("d-none");
-
-                // Utente non può cliccare più su altre celle
-                gridElement.classList.add("no-more-click");
-
-            
-                // se la cella non ha una bomba   
+            // se la cella non ha una bomba   
             } else {
 
                 counter += 0;
@@ -143,14 +110,14 @@ ButtonElement.addEventListener("click", function(event){
 });
 
 
-// Funzione che mi genera 16 numeri random diversi tra 1 e 100
+// Funzione che mi genera 16 numeri random diversi
 
-function randomNumberEasy() {
+function randomNumberEasy(max) {
 
     const arrayEasy = [];
 
     while (arrayEasy.length < 16) {
-        const random100Numbers = Math.floor(Math.random() * 100) + 1;
+        const random100Numbers = Math.floor(Math.random() * max) + 1;
 
         if (!arrayEasy.includes(random100Numbers)){
             arrayEasy.push(random100Numbers);
@@ -159,41 +126,5 @@ function randomNumberEasy() {
 
     return arrayEasy;
 }
-
-// Funzione che mi genera 16 numeri random diversi tra 1 e 81
-
-function randomNumberMedium() {
-
-    const arrayMedium = [];
-
-    while (arrayMedium.length < 16) {
-        const random81Numbers = Math.floor(Math.random() * 81) + 1;
-
-        if (!arrayMedium.includes(random81Numbers)){
-            arrayMedium.push(random81Numbers);
-        }
-    }
-
-    return arrayMedium;
-}
-
-// Funzione che mi genera 16 numeri random diversi tra 1 e 49
-
-function randomNumberDifficult() {
-
-    const arrayDifficult = [];
-
-    while (arrayDifficult.length < 16) {
-        const random49Numbers = Math.floor(Math.random() * 49) + 1;
-
-        if (!arrayDifficult.includes(random49Numbers)){
-            arrayDifficult.push(random49Numbers);
-        }
-    }
-
-    return arrayDifficult;
-}
-
-
 
 
