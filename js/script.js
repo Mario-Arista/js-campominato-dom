@@ -45,8 +45,8 @@ ButtonElement.addEventListener("click", function(event){
     }
 
     // Dichiaro l'array con numeri casuali
-    const randomNumers100Cells = randomNumberEasy(numberOfCells);
-    console.log("numeri con bombe LIVELLO FACILE", randomNumers100Cells);
+    const randomNumers = randomNumberEasy(numberOfCells);
+    console.log("numeri con bombe LIVELLO FACILE", randomNumers);
 
     // Faccio vedere punteggio
     document.querySelector(".hidden-points").classList.remove("d-none");
@@ -75,17 +75,32 @@ ButtonElement.addEventListener("click", function(event){
         newElement.addEventListener("click", function() {
 
             // se la cella ha una bomba 
-            if (randomNumers100Cells.includes(i)) {
+            if (randomNumers.includes(i)) {
                 
                 this.classList.add("bomb");
                 console.log("è stata cliccata la cella con bomba:", this);
-                newElement.innerText = "BOMB!";
+                this.innerText = "BOMB!";
 
                 // Messaggio "hai perso"
                 document.querySelector(".hidden-lost").classList.remove("d-none");
-
+                
+                // BONUS 1
                 // Utente non può cliccare più su altre celle
                 gridElement.classList.add("no-more-click");
+
+
+                // BONUS 2
+                const everyCellList = gridElement.querySelectorAll(".square");
+    
+                for(let i = 0; i < everyCellList.length; i++) {
+                    // per ogni cella della griglia
+            
+                    if(randomNumers.includes(Number(everyCellList[i].innerText))) {
+                        everyCellList[i].classList.add("bomb");
+                        everyCellList[i].innerText = "BOMB!";
+
+                    }
+                }
 
             // se la cella non ha una bomba   
             } else {
